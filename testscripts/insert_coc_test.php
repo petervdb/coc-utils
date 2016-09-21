@@ -14,8 +14,8 @@
    }
 
    $sql =<<<EOF
-      INSERT INTO tblClans (ClTag,ClName,ClDescription,ClType,ClLocation,ClBadgeURL,ClWarFrequency,ClClanLevel,ClWarWins,ClWarWinStreak,ClClanPoints,ClRequiredTrophies,ClMembers,ClCreated,ClUpdated)
-      VALUES ('1111111', 'TestClan', 'First clan','Type','Locatie','http://test','never',1,2,3,4,5,10,'2016-09-20 22:00:00','2016-09-20 22:00:00' );
+      INSERT INTO tblClans (ClTag,ClName,ClDescription,ClType,ClLocation,ClBadgeURL,ClWarFrequency,ClClanLevel,ClWarWins,ClWarWinStreak,ClClanPoints,ClRequiredTrophies,ClMembers,ClCreated,ClUpdated,ClActive,ClQueue)
+      VALUES ('1111111', 'TestClan', 'First clan','Type','Locatie','http://test','never',1,2,3,4,5,10,'2016-09-20 22:00:00','2016-09-20 22:00:00',0,0 );
 
 EOF;
 

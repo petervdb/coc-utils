@@ -42,6 +42,8 @@ EOF;
       echo "ClMembers = ". $row['ClMembers'] ."\n";
       echo "ClCreated = ". $row['ClCreated'] ."\n";
       echo "ClUpdated =  ".$row['ClUpdated'] ."\n\n";
+      echo "ClActive =  ".$row['ClActive'] ."\n\n";
+      echo "ClQueue =  ".$row['ClQueue'] ."\n\n";
    }
    echo "Operation done successfully\n";
    $db->close();

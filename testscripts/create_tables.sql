@@ -13,7 +13,9 @@ CREATE TABLE TblClans(
   ClRequiredTrophies int,
   ClMembers int,
   ClCreated text,
-  ClUpdated text
+  ClUpdated text,
+  ClActive int,
+  ClQueue int
 
 );
 CREATE TABLE TblMembers(
@@ -29,5 +31,7 @@ CREATE TABLE TblMembers(
   MbDonations int,
   MbReceived int,
   MbCreated text,
-  MbUpdated text
+  MbUpdated text,
+  MbActive int,
+  MbQueue int
 );
