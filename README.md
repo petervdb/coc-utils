@@ -20,4 +20,4 @@ You should be able to start using the scripts.
 History
 =======
 * 2016-09-06 - Created this small repository
-* 2017-09-27 - SQLite orangenl.sqlite contains all Dutch Orange clans
+* 2016-09-27 - SQLite orangenl.sqlite contains all Dutch Orange clans
