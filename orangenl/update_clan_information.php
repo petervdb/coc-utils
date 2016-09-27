@@ -20,6 +20,7 @@ EOF;
 
    $ret = $db->query($sql);
    while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
+      $cur_date = gmdate('Y-m-d h:i:s', time());
       $Clantag = "#".$row['ClTag'];
       $Clantagno = $row['ClTag'];
       echo "Tag = ". $row['ClTag'] . " Identfied as clan " . $row['ClName'] ."\n";
@@ -41,17 +42,27 @@ EOF;
       $clan = new CoC_Clan("$Clantag");
       // echo "<img src=\"".$clan->getBadgeUrl("small")."\"\n";
       // echo $clan->getTag() . "\n";
-      echo "Clan identified as: " . $clan->getName() . "\n----------------------------------\n";
-      $Clanname = $clan->getName();
-      // echo $clan->getType()."";
-      // echo $clan->getWarWins()."";
-      // echo $clan->getWarWinStreak()."";
-      // echo $clan->getLevel()."";
-      // echo $clan->getPoints()."";
-      // echo $clan->getMemberCount()."";
-      // echo $clan->getDescription()."";
+      echo "Clan identified as: " . $clan->getName();
+      echo "\n----------------------------------\n";
+      $ClanName = $clan->getName();
+      $ClType = $clan->getType();
+      $ClWarWins = $clan->getWarWins();
+      $ClWarWinStreak = $clan->getWarWinStreak();
+      $ClLevel = $clan->getLevel();
+      $ClPoints = $clan->getPoints();
+      $ClMemberCount = $clan->getMemberCount();
+      $ClDescription = strip_tags($clan->getDescription());
       $sqlupd=<<<EOF
-      UPDATE tblClans set ClName = '$Clanname' where ClTag='$Clantagno';
+      UPDATE tblClans set ClName = '$ClanName',
+        ClType = '$ClType',
+        ClDescription = 'NA',
+        ClWarWins = $ClWarWins,
+        ClWarWinStreak = $ClWarWinStreak,
+        ClClanLevel = $ClLevel,
+        ClClanPoints = $ClPoints,
+        ClMembers = $ClMemberCount,
+        ClUpdated = '$cur_date'
+        where ClTag='$Clantagno';
 EOF;
       $ret2 = $db->exec($sqlupd);
       if(!$ret2){
