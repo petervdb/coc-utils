@@ -16,8 +16,21 @@ CREATE TABLE TblClans(
   ClUpdated text,
   ClActive int,
   ClQueue int
-
 );
+
+CREATE TABLE TblClansHist(
+  ClHiDate text NOT NULL,
+  ClHiTag text NOT NULL,
+  ClHiName text NOT NULL,
+  ClHiType text,
+  ClHiClanLevel int,
+  ClHiWarWins int,
+  ClHiWarWinStreak int,
+  ClHiClanPoints int,
+  ClHiMembers int,
+  PRIMARY KEY (ClHiDate, ClHiTag)
+);
+
 CREATE TABLE TblMembers(
   MbTag text PRIMARY KEY,
   MbName text NOT NULL,

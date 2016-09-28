@@ -16,6 +16,7 @@ Copy the PHP scripts from ClashOfClans-API-PHP into a folder clashapi.
 Rename all PHP files with small letters otherwise my PHP scripts will not work when using Linux. Or you can also rename the folder clashapi_copy to clashapi.
 Now, go to the developers site from Clash Of Clans and generate a Key. Add the Key to api.class.php. 
 You should be able to start using the scripts.
+I have tried to keep the scripts as simple as possible. SQLite has specifically been chosen to store the data to limit resources and to be able to run these scripts on low power devices like Raspberry Pi or Beagleboard Black.
 
 History
 =======
