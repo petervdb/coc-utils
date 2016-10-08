@@ -15,7 +15,7 @@
    }
 
    $sql =<<<EOF
-      SELECT * from tblClans;
+      SELECT * from tblClans where ClActive=1;
 EOF;
 
    $ret = $db->query($sql);
