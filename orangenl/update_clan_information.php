@@ -19,6 +19,9 @@
 EOF;
 
    $ret = $db->query($sql);
+   $cur_date = gmdate('Y-m-d h:i:s', time());
+   echo "Starting time: $cur_date\n";
+   echo "======================================================================\n";
    while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
       $cur_date = gmdate('Y-m-d h:i:s', time());
       $Clantag = "#".$row['ClTag'];
@@ -73,4 +76,7 @@ EOF;
    }
    echo "Operation done successfully\n";
    $db->close();
+   $cur_date = gmdate('Y-m-d h:i:s', time());
+   echo "Ending time: $cur_date\n";
+   echo "======================================================================\n";
 ?>

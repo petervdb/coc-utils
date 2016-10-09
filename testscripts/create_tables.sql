@@ -15,6 +15,7 @@ CREATE TABLE TblClans(
   ClCreated text,
   ClUpdated text,
   ClActive int,
+  ClHiActive int,
   ClQueue int
 );
 
