@@ -20,6 +20,7 @@ EOF;
 
    $ret = $db->query($sql);
    $cur_date = gmdate('Y-m-d h:i:s', time());
+   // $cur_date = system("date '+%Y-%m-%d %H:%M:%S'");
    echo "Starting time: $cur_date\n";
    echo "======================================================================\n";
    while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
