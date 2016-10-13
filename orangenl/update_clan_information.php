@@ -19,12 +19,12 @@
 EOF;
 
    $ret = $db->query($sql);
-   $cur_date = gmdate('Y-m-d h:i:s', time());
+   $cur_date = gmdate('Y-m-d H:i:s', time());
    // $cur_date = system("date '+%Y-%m-%d %H:%M:%S'");
    echo "Starting time: $cur_date\n";
    echo "======================================================================\n";
    while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
-      $cur_date = gmdate('Y-m-d h:i:s', time());
+      $cur_date = gmdate('Y-m-d H:i:s', time());
       $Clantag = "#".$row['ClTag'];
       $Clantagno = $row['ClTag'];
       echo "Tag = ". $row['ClTag'] . " Identfied as clan " . $row['ClName'] ."\n";
@@ -77,7 +77,7 @@ EOF;
    }
    echo "Operation done successfully\n";
    $db->close();
-   $cur_date = gmdate('Y-m-d h:i:s', time());
+   $cur_date = gmdate('Y-m-d H:i:s', time());
    echo "Ending time: $cur_date\n";
    echo "======================================================================\n";
 ?>

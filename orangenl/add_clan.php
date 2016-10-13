@@ -23,7 +23,7 @@
    } else {
      echo "Adding $clan to the database ... \n";
    }
-   $cur_date = gmdate('Y-m-d h:i:s', time());
+   $cur_date = gmdate('Y-m-d H:i:s', time());
    $sql =<<<EOF
 insert into tblClans (ClTag,ClName,ClDescription,ClType,ClLocation,ClBadgeURL,ClWarFrequency,ClClanLevel,ClWarWins,ClWarWinStreak,ClClanPoints,ClRequiredTrophies,ClMembers,ClCreated,ClUpdated) VALUES ('$clan', '$clan', '','','','','',0,0,0,0,0,0,'$cur_date','$cur_date' );
 EOF;
