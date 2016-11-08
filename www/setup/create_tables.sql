@@ -21,4 +21,34 @@ CREATE TABLE `TblClans` (
   KEY `ClName` (`ClName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE TblClansHist(
+  ClHiDate datetime NOT NULL,
+  ClHiTag varchar(10) NOT NULL,
+  ClHiName varchar(40) NOT NULL,
+  ClHiType text,
+  ClHiClanLevel int,
+  ClHiWarWins int,
+  ClHiWarWinStreak int,
+  ClHiClanPoints int,
+  ClHiMembers int,
+  PRIMARY KEY (ClHiDate, ClHiTag)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE TblMembers(
+  MbTag varchar(10) PRIMARY KEY,
+  MbName text NOT NULL,
+  MbClTag varchar(10),
+  MbRole varchar(10),
+  MbLevel int,
+  MbLeagueId int,
+  MbLeague text,
+  MbTrophies int,
+  MbClanRank int,
+  MbDonations int,
+  MbReceived int,
+  MbCreated datetime,
+  MbUpdated datetime,
+  MbActive int,
+  MbQueue int
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
