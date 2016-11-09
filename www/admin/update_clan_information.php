@@ -40,11 +40,18 @@
         ClClanPoints = $ClPoints, ClMembers = $ClMemberCount,
         ClUpdated = '$cur_date' where ClTag='$Clantagno';";
       if ($conn->query($sqlupd) === TRUE) {
-        echo "Record updated successfully";
+        echo "Record updated successfully\n";
       } else {
-        echo "Error updating record: " . $conn->error;
+        echo "Error updating record: " . $conn->error . "\n";
       }
      }
+   // Update the history table
+   $sqlhistupd="insert into TblClansHist (select ClUpdated, ClTag, ClName, ClType, ClClanLevel, ClWarWins, ClWarWinStreak, ClClanPoints, ClMembers from TblClans where ClHiActive = 1);";
+   if ($conn->query($sqlhistupd) === TRUE) {
+     echo "History table updated successfully\n";
+   } else {
+     echo "Error updating history table: " . $conn->error . "\n";
+   }
    echo "Operation done successfully\n";
    $conn->close();
    $cur_date = gmdate('Y-m-d H:i:s', time());
