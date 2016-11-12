@@ -1,6 +1,16 @@
 <?php
   require_once "../clashapi/api.class.php";
   require "../include/config.php";
+  // var_dump($argv);
+  if ($argc == 2) {
+    switch ($argv[1]) {
+      case "updhist":
+        $updhist = 1;
+        break;
+    }
+  } else {
+    $updhist = 0;
+  }
   $conn = new mysqli($servername, $dbuser, $dbpassword, $db);
   // Check connection
   if ($conn->connect_error) {
@@ -45,12 +55,16 @@
         echo "Error updating record: " . $conn->error . "\n";
       }
      }
-   // Update the history table
-   $sqlhistupd="insert into TblClansHist (select ClUpdated, ClTag, ClName, ClType, ClClanLevel, ClWarWins, ClWarWinStreak, ClClanPoints, ClMembers from TblClans where ClHiActive = 1);";
-   if ($conn->query($sqlhistupd) === TRUE) {
-     echo "History table updated successfully\n";
+   if ($updhist == 1) {
+     // Update the history table
+     $sqlhistupd="insert into TblClansHist (select ClUpdated, ClTag, ClName, ClType, ClClanLevel, ClWarWins, ClWarWinStreak, ClClanPoints, ClMembers from TblClans where ClHiActive = 1);";
+     if ($conn->query($sqlhistupd) === TRUE) {
+       echo "History table updated successfully\n";
+     } else {
+       echo "Error updating history table: " . $conn->error . "\n";
+     }
    } else {
-     echo "Error updating history table: " . $conn->error . "\n";
+       echo "History table update disabled\n";
    }
    echo "Operation done successfully\n";
    $conn->close();
