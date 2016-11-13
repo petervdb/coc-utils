@@ -10,7 +10,9 @@ Het overzicht hieronder is niet helemaal up-to-date. Er is een vertraging mogeli
 De Tag link is dat wel. De Kuilin link is de Chocolate Clash databank.<BR>
 Een overzicht van alle clans die momenteel periodiek worden bijgehouden:<BR>
 <?php
-  include "include/config.php";
+  include_once "include/config.php";
+  include_once "include/my_functions.php";
+  $thispage=basename($_SERVER['PHP_SELF']);
   // Create connection
   $conn = new mysqli($servername, $dbuser, $dbpassword, $db);
   // Check connection
@@ -48,7 +50,10 @@ Een overzicht van alle clans die momenteel periodiek worden bijgehouden:<BR>
 ?>
 <BR><BR>Een heel gedetaileerd overzicht van de clan kan je in de volgende link vinden, maar het duurt ongeveer 1 minuut om de pagina te genereren:<BR>
 <?php
-  echo "<a target=\"_blank\" href=\"examples/claninformation_orange.php" .  "\">" . "Gedetailleerd overzicht alle NL Orange clans" . "</a>";
+  echo "<a target=\"_blank\" href=\"examples/claninformation_orange.php" .  "\">" . "Gedetailleerd overzicht alle NL Orange clans" . "</a><BR>";
+  DisplayComment("Increase Page");
+  IncreasePage($thispage);
+  DisplayPageViews($thispage);
 ?>
 
 </BODY>
