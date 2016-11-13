@@ -52,3 +52,17 @@ CREATE TABLE TblMembers(
   MbQueue int
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE TblSettings (
+  `SeParam` VARCHAR(10) NOT NULL,
+  `SeValue` VARCHAR(45) NULL DEFAULT 'unknown',
+  PRIMARY KEY (`SeParam`),
+  UNIQUE INDEX `SeParam_UNIQUE` (`SeParam` ASC))
+ENGINE = InnoDB
+COMMENT = 'Stores all generic settings';
+
+CREATE TABLE TblPageViews (
+  `PaPage` VARCHAR(45) NOT NULL,
+  `PaViews` INT NULL DEFAULT 0,
+  PRIMARY KEY (`PaPage`))
+COMMENT = 'Page views';
+
