@@ -53,6 +53,7 @@ Een overzicht van alle clans die momenteel periodiek worden bijgehouden:<BR>
   echo "<a target=\"_blank\" href=\"examples/claninformation_orange.php" .  "\">" . "Gedetailleerd overzicht alle NL Orange clans" . "</a><BR>";
   DisplayComment("Increase Page");
   IncreasePage($thispage);
+  DisplayComment("Display views");
   DisplayPageViews($thispage);
 ?>
 

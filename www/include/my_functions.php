@@ -5,9 +5,10 @@ function GetFilename($myfile) {
 }
 
 // Place comment
-function DisplayComment($comment) {
-  echo "<!-- =============================== " . $comment . "-->\n";
+function DisplayComment($comment = "unknown" ) {
+  echo "\n<!-- =============================== Comment: $comment -->\n";
 }
+
 // Increase the page views
 function IncreasePage($page) {
   global $conn;
@@ -29,12 +30,11 @@ function IncreasePage($page) {
 // Display page views
 function DisplayPageViews($page) {
   global $conn;
+  DisplayComment($page);
   $sql = "SELECT PaViews from TblPageViews where PaPage = '$page' LIMIT 1;";
   $result = $conn->query($sql);
-  echo "<!-- ===============================-->\n";
-  var_dump($result);
-  while($row = $result->fetch_assoc()) {
-    echo "This page has been viewed ". $row['PaPage'] . "times.</BR>\n";
-  }
+  // var_dump($result);
+  $row = $result->fetch_assoc();
+  echo "This page has been viewed ". $row['PaViews'] . " times.</BR>\n";
 }
 ?>
