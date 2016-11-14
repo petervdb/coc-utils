@@ -46,7 +46,6 @@ Een overzicht van alle clans die momenteel periodiek worden bijgehouden:<BR>
   } else {
     echo "0 results";
   }
-  $conn->close();
 ?>
 <BR><BR>Een heel gedetaileerd overzicht van de clan kan je in de volgende link vinden, maar het duurt ongeveer 1 minuut om de pagina te genereren:<BR>
 <?php
@@ -55,7 +54,7 @@ Een overzicht van alle clans die momenteel periodiek worden bijgehouden:<BR>
   IncreasePage($thispage);
   DisplayComment("Display views");
   DisplayPageViews($thispage);
+  $conn->close();
 ?>
-
 </BODY>
 </HTML>
