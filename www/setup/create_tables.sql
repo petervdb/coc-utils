@@ -64,12 +64,18 @@ CREATE TABLE `TblSettings` (
   `SeDesc` varchar(60) DEFAULT NULL COMMENT 'Description',
   PRIMARY KEY (`SeParam`),
   UNIQUE KEY `SeParam_UNIQUE` (`SeParam`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Stores all generic settings'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Stores all generic settings';
 
 CREATE TABLE `TblPageHistory` (
   `PaHiPage` varchar(45) NOT NULL,
   `PaHiViews` int(11) DEFAULT '0',
   `PaHiDate` date DEFAULT '1900-01-01',
   UNIQUE KEY `INDEX01` (`PaHiPage`,`PaHiDate`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Page History views'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Page History views';
+
+CREATE TABLE `TblQueue`( 
+  `QuId` INT NOT NULL COMMENT 'Queue number', 
+  `QuName` VARCHAR(20) COMMENT 'Queue description', 
+  UNIQUE INDEX `QueueIdIndex` (`QuId`) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Queue table'; 
 
