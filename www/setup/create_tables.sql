@@ -70,7 +70,6 @@ CREATE TABLE `TblPageHistory` (
   `PaHiPage` varchar(45) NOT NULL,
   `PaHiViews` int(11) DEFAULT '0',
   `PaHiDate` date DEFAULT '1900-01-01',
-  PRIMARY KEY (`PaHiPage`),
   UNIQUE KEY `INDEX01` (`PaHiPage`,`PaHiDate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Page History views'
 
