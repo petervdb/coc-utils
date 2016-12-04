@@ -73,7 +73,7 @@
       }
       if ($updhist == 1) {
         // Update the history table
-        $sqlhistupd="PERFORM INSERT HERE FOR HISTORY";
+        $sqlhistupd="insert into TblMembersHist (select MbUpdated, MbTag, MbName, MbClTag,MbRole,MbLevel,MbLeagueId,MbLeague,MbTrophies,MbClanRank,MbDonations,MbReceived from TblMembers);";
         // if ($conn->query($sqlhistupd) === TRUE) {
           // echo "History table updated successfully\n";
         // } else {

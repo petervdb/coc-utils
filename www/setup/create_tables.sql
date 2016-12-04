@@ -52,6 +52,25 @@ CREATE TABLE TblMembers(
   MbQueue int
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE `TblMembersHist` (
+  `MbHiDate` datetime NOT NULL,
+  `MbHiTag` varchar(10) NOT NULL,
+  `MbHiName` text NOT NULL,
+  `MbHiClTag` varchar(10) DEFAULT NULL,
+  `MbHiRole` varchar(10) DEFAULT NULL,
+  `MbHiLevel` int(11) DEFAULT NULL,
+  `MbHiLeagueId` int(11) DEFAULT NULL,
+  `MbHiLeague` text,
+  `MbHiTrophies` int(11) DEFAULT NULL,
+  `MbHiClanRank` int(11) DEFAULT NULL,
+  `MbHiDonations` int(11) DEFAULT NULL,
+  `MbHiReceived` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `TblMembersHist`
+  ADD PRIMARY KEY (`MbHiDate`,`MbHiTag`),
+  ADD KEY `MbHiClTag` (`MbHiClTag`);
+
 CREATE TABLE TblPageViews (
   `PaPage` VARCHAR(45) NOT NULL,
   `PaViews` INT NULL DEFAULT 0,
