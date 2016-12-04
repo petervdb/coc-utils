@@ -58,12 +58,14 @@
         $mbname = str_replace( '"', "", $mbname );
         // $mbname = "NA";
         $mbtag = $member->getTag(); 
+        $mblevel = $member->getLevel(); 
+        $mbleagueid = $member->getLeagueId(); 
         $mbrole = $member->getRole(); 
         $mbtrophies = $member->getTrophies(); $mbdonations = $member->getDonations(); 
         $mbreceived = $member->getDonationsReceived();
         $sqlupd="INSERT INTO TblMembers (MbTag, MbName, MbClTag,MbRole,MbLevel,MbLeagueId,MbLeague,MbTrophies,
           MbClanRank,MbDonations,MbReceived,MbCreated,MbUpdated,MbActive,MbQueue) values
-          ('$mytag','$mbname', '$Clantagno','$mbrole',0,0,0,'$mbtrophies',
+          ('$mytag','$mbname', '$Clantagno','$mbrole','$mblevel','$mbleagueid',0,'$mbtrophies',
           0,'$mbdonations','$mbreceived',now(),now(),1,1);";
         if ($conn->query($sqlupd) === TRUE) {
           echo "Record ($mytag - $mbname) inserted successfully\n";
