@@ -6,9 +6,9 @@
 <BODY>
 <H1>Welkom op coc.inter-esse.be</H1>
 <p>
-Ben je op zoek naar een Orange clan, dan ben je hier aan het juiste adres.<BR>
-Het overzicht hieronder is niet helemaal up-to-date. Er is een vertraging mogelijk die kan oplopen tot een paar uur.<BR> Naast elke clan staat het tijdstip vermeld wanneer deze het laatst werd nagezien.<BR>
-De Tag link is dat wel. De Kuilin link is de Chocolate Clash databank.<BR>
+Hier kan je een overzicht vinden van clans die de moeite waard zijn om eens van nabij te bekijken.<BR>
+Het overzicht hieronder bevat een mix van farm en war clans terug te vinden op Clash of Clans. Er is een vertraging mogelijk die kan oplopen tot een paar uur.<BR> Naast elke clan staat het tijdstip vermeld wanneer deze het laatst werd nagezien.<BR>
+De Tag link is dat wel. De Kuilin link is de Chocolate Clash databank. Deze link is alleen interessant als je belangstelling hebt in een farm clan.<BR>
 Een overzicht van alle clans die momenteel periodiek worden bijgehouden:<BR>
 <?php
   include_once "include/config.php";
