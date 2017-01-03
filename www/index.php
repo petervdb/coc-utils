@@ -1,6 +1,7 @@
 <HTML>
 <HEAD>
 <TITLE>Welkom op coc.inter-esse.be</TITLE>
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 </HEAD>
 <BODY>
 <H1>Welkom op coc.inter-esse.be</H1>

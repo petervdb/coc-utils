@@ -1,3 +1,9 @@
+<HTML>
+<HEAD>
+<TITLE>Welkom op coc.inter-esse.be</TITLE>
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+</HEAD>
+<BODY>
 <?php
 require_once "clashapi/api.class.php";
 include_once "include/config.php";
