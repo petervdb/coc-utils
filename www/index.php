@@ -1,15 +1,18 @@
 <HTML>
 <HEAD>
-<TITLE>Welkom op coc.inter-esse.be</TITLE>
+<TITLE>Welcome on coc.inter-esse.be</TITLE>
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 </HEAD>
 <BODY>
-<H1>Welkom op coc.inter-esse.be</H1>
+<H1>Welcome on coc.inter-esse.be</H1>
 <p>
-Hier kan je een overzicht vinden van clans die de moeite waard zijn om eens van nabij te bekijken.<BR>
-Het overzicht hieronder bevat een mix van farm en war clans terug te vinden op Clash of Clans. Er is een vertraging mogelijk die kan oplopen tot een paar uur.<BR> Naast elke clan staat het tijdstip vermeld wanneer deze het laatst werd nagezien.<BR>
-De Tag link is dat wel. De Kuilin link is de Chocolate Clash databank. Deze link is alleen interessant als je belangstelling hebt in een farm clan.<BR>
-Een overzicht van alle clans die momenteel periodiek worden bijgehouden:<BR>
+This page contains some clans on Clash Of Clans which are interesting for me and where I have been active from time to time.<BR>
+Most clans are farming clans which are active in Orange, Griffin of FWA. But it could also be that they do normal wars.<BR>
+This page gets automatically updated from time to time. There can be a delay of a few hours.<BR>
+Next to each clan you can see when it has been updated.<BR>
+When you click on the tag and see details about the clan, that information is a realtime status of the clan. The Kuilin link is the link to Chocolate Clash databank.<BR>
+That link is only interesting if you have interests in farm wars and it's history.<BR>
+Overview clans:<BR>
 <?php
   include_once "include/config.php";
   include_once "include/my_functions.php";
@@ -48,9 +51,8 @@ Een overzicht van alle clans die momenteel periodiek worden bijgehouden:<BR>
     echo "0 results";
   }
 ?>
-<BR><BR>Een heel gedetaileerd overzicht van de clan kan je in de volgende link vinden, maar het duurt ongeveer 1 minuut om de pagina te genereren:<BR>
+<BR>
 <?php
-  echo "<a target=\"_blank\" href=\"examples/claninformation_orange.php" .  "\">" . "Gedetailleerd overzicht alle NL Orange clans" . "</a><BR>";
   DisplayComment("Increase Page");
   IncreasePage($thispage);
   DisplayComment("Display views");

@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-<TITLE>Welkom op coc.inter-esse.be</TITLE>
+<TITLE>Welcome to coc.inter-esse.be</TITLE>
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 </HEAD>
 <BODY>
@@ -30,7 +30,7 @@ echo " - Chocolate Clash: <a target=\"_blank\" href=\"http://www.kuilin.net/cc/c
 echo "<br/>";
 echo "Warlog details: <a target=\"_blank\" href=\"warlog_info.php?tag=" . $mytag . "\">" . $foxforce->getTag() . "</a>";
 echo "<br/>";
-echo "<table border=1><tr><th>#</th><th>Naam</th><th>Tag Kuilin</th><<th>Rang</th><th>Bekers</th><th>Donaties</th><th>Ontvangen Donaties</th><th>Verhouding Donaties</th></tr>";
+echo "<table border=1><tr><th>#</th><th>Name</th><th>Tag Kuilin</th><th>Rank</th><th>Trophies</th><th>Donations</th><th>Donations Received</th><th>Ratio Donations</th></tr>";
 foreach ($foxforce->getAllMembers() as $clanmember) 
 {
 	$member = new CoC_Member($clanmember);
@@ -42,14 +42,13 @@ foreach ($foxforce->getAllMembers() as $clanmember)
           $mytag = str_replace("#", "", $member->getTag());
 	  echo "<tr><td>".$member->getClanRank()."</td><td>".$member->getName()."</td>";
           echo "<td><a target=\"_blank\" href=\"http://www.kuilin.net/cc/member.php?tag=" . $mytag . "\">" . $member->getTag() . "</a></td>";
-          echo "<td>".$member->getRole()."</td><td>".$member->getTrophies()."</td><td>".$member->getDonations()."</td><td>".$member->getDonationsReceived()."</td><td>Verhouding: ".number_format($ratio, 2)."</td></tr>";
+          echo "<td>".$member->getRole()."</td><td>".$member->getTrophies()."</td><td>".$member->getDonations()."</td><td>".$member->getDonationsReceived()."</td><td>Ratio: ".number_format($ratio, 2)."</td></tr>";
 	}  
 }
-
 ?>
 </table>
 <br/>
-Verhouding Donaties = Donaties / Ontvangen Donaties (Als ontvangen donaties 0 is wordt 1 gebruikt om fouten te vermijden)<br/>
+Ratio Donations = Donations / Received Donations (If received donations are 0, 1 will be used to prevent errors.)<br/>
 admin = oudste<br/>
 <?php
 DisplayComment("Increase Page");
