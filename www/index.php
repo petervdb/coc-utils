@@ -30,10 +30,12 @@ Overview clans:<BR>
   if ($result->num_rows > 0) {
       // output data of each row
       echo "<table border=1>";
-      echo "<tr><td>Tag</td><td>Kuilin</td><td>Name</td><td>Type</td><td>War Wins</td><td>Win Streaks<td>Level</td><td>Points</td><td>Members</td><td>Laatste update</td></tr>";
+      echo "<tr><td>Tag</td><td>Kuilin</td><td>FWA Stats</td><td>ClashOfStats</td><td>Name</td><td>Type</td><td>War Wins</td><td>Win Streaks<td>Level</td><td>Points</td><td>Members</td><td>Laatste update</td></tr>";
       while($row = $result->fetch_assoc()) {
         echo "<td><a target=\"_blank\" href=\"detailed_claninfo.php?tag=" . $row["ClTag"] . "\">" . $row["ClTag"] . "</a></td>";
         echo "<td><a target=\"_blank\" href=\"http://www.kuilin.net/cc/clan.php?tag=" . $row["ClTag"] . "\">" . $row["ClTag"] . "</a></td>";
+        echo "<td><a target=\"_blank\" href=\"http://fwastats.azurewebsites.net/Clan/" . $row["ClTag"] . "\">" . $row["ClTag"] . "</a></td>";
+        echo "<td><a target=\"_blank\" href=\"https://www.clashofstats.com/clans/" . $row["ClTag"] . "/members\">" . members . "</a></td>";
         echo "<td>".$row["ClName"]."</td>";
         echo "<td>".$row["ClType"]."</td>";
         echo "<td>".$row["ClWarWins"]."</a></td>";

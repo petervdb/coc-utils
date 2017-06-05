@@ -26,11 +26,13 @@ if(isset($_GET['maxdon'])) {
 $foxforce = new CoC_Clan("#$mytag");
 
 echo "<img src=\"".$foxforce->getBadgeUrl("small")."\" /><h1 style='display:inline'>".$foxforce->getName()."</h1> ".$foxforce->getTag()." - Level: ".$foxforce->getLevel();
-echo " - Chocolate Clash: <a target=\"_blank\" href=\"http://www.kuilin.net/cc/clan.php?tag=" . $mytag . "\">" . $foxforce->getTag() . "</a>";
+echo "<br/>Chocolate Clash: <a target=\"_blank\" href=\"http://www.kuilin.net/cc/clan.php?tag=" . $mytag . "\">" . $foxforce->getTag() . "</a><br/>";
+echo "FWA Stats: <a target=\"_blank\" href=\"http://fwastats.azurewebsites.net/Clan/" . $mytag . "\">" . $mytag . "</a><br/>";
+echo "Clash of Stats: <a target=\"_blank\" href=\"https://www.clashofstats.com/clans/" . $mytag . "/members\">" . members . "</a><br/>";
 echo "<br/>";
 echo "Warlog details: <a target=\"_blank\" href=\"warlog_info.php?tag=" . $mytag . "\">" . $foxforce->getTag() . "</a>";
 echo "<br/>";
-echo "<table border=1><tr><th>#</th><th>Name</th><th>Tag Kuilin</th><th>Rank</th><th>Trophies</th><th>Donations</th><th>Donations Received</th><th>Ratio Donations</th></tr>";
+echo "<table border=1><tr><th>#</th><th>Name</th><th>Tag Kuilin</th><th>FWA</th><th>ClashOfStats</th><th>Rank</th><th>Trophies</th><th>Donations</th><th>Donations Received</th><th>Ratio Donations</th></tr>";
 foreach ($foxforce->getAllMembers() as $clanmember) 
 {
 	$member = new CoC_Member($clanmember);
@@ -42,6 +44,8 @@ foreach ($foxforce->getAllMembers() as $clanmember)
           $mytag = str_replace("#", "", $member->getTag());
 	  echo "<tr><td>".$member->getClanRank()."</td><td>".$member->getName()."</td>";
           echo "<td><a target=\"_blank\" href=\"http://www.kuilin.net/cc/member.php?tag=" . $mytag . "\">" . $member->getTag() . "</a></td>";
+          echo "<td><a target=\"_blank\" href=\"http://fwastats.azurewebsites.net/Player/" . $mytag . "\">" . $member->getTag() . "</a></td>";
+          echo "<td><a target=\"_blank\" href=\"https://www.clashofstats.com/players/" . $mytag . "/profile\">" . $member->getTag() . "</a></td>";
           echo "<td>".$member->getRole()."</td><td>".$member->getTrophies()."</td><td>".$member->getDonations()."</td><td>".$member->getDonationsReceived()."</td><td>Ratio: ".number_format($ratio, 2)."</td></tr>";
 	}  
 }
