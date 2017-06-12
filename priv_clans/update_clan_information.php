@@ -4,7 +4,7 @@
    {
       function __construct()
       {
-         $this->open('orangenl.sqlite');
+         $this->open('priv_clans.sqlite');
       }
    }
    $db = new MyDB();
