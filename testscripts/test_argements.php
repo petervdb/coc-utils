@@ -1,3 +1,4 @@
+#!/usr/bin/php -q
 <?php
   var_dump($argv);
   echo "You have used $argc arguments.\n";
