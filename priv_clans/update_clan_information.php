@@ -27,7 +27,7 @@ EOF;
       $cur_date = gmdate('Y-m-d H:i:s', time());
       $Clantag = "#".$row['ClTag'];
       $Clantagno = $row['ClTag'];
-      echo "Tag = ". $row['ClTag'] . " Identfied as clan " . $row['ClName'] ."\n";
+      // echo "Tag = ". $row['ClTag'] . " Identfied as clan " . $row['ClName'] ."\n";
       // echo "ClDescription = ". $row['ClDescription'] ."\n";
       // echo "ClType = ". $row['ClType'] ."\n";
       // echo "ClLocation = ". $row['ClLocation'] ."\n";
@@ -56,19 +56,11 @@ EOF;
       $ClPoints = $clan->getPoints();
       $ClMemberCount = $clan->getMemberCount();
       $ClDescription = strip_tags($clan->getDescription());
-      $sqlupd=<<<EOF
-      UPDATE tblClans set ClName = '$ClanName',
-        ClType = '$ClType',
-        ClDescription = 'NA',
-        ClWarWins = $ClWarWins,
-        ClWarWinStreak = $ClWarWinStreak,
-        ClClanLevel = $ClLevel,
-        ClClanPoints = $ClPoints,
-        ClMembers = $ClMemberCount,
-        ClUpdated = '$cur_date'
-        where ClTag='$Clantagno';
-EOF;
-      $ret2 = $db->exec($sqlupd);
+      $sqlupd="UPDATE tblClans set ClName = '$ClanName', ClType = '$ClType', ClDescription = '$ClDescription', ClWarWins = $ClWarWins, ClWarWinStreak = $ClWarWinStreak,
+        ClClanLevel = $ClLevel, ClClanPoints = $ClPoints, ClMembers = $ClMemberCount, ClUpdated = '$cur_date' where ClTag='$Clantagno'";
+      # $sqlupd="UPDATE tblClans set ClName = '$ClanName', ClType = '$ClType',ClUpdated = '$cur_date' WHERE ClTag='$Clantagno'";
+      echo "Update statement: $sqlupd\n";
+      $ret2 = $db->exec("$sqlupd");
       if(!$ret2){
          echo $db->lastErrorMsg();
       } else {
